@@ -9,6 +9,9 @@ from pages.shops_page import ShopsPage
 def driver():
     options = Options()
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')  # Обязательно для запуска от root/SYSTEM
+    options.add_argument('--disable-dev-shm-usage')  # Обязательно для Docker (обходит нехватку памяти /dev/shm)
+    options.add_argument('--disable-gpu')  # Дополнительная стабильность для headless
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     yield chrome_driver
