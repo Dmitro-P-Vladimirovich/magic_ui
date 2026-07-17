@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import pytest
 from pages.customer_login import CustomerLogin
 from pages.shops_page import ShopsPage
+import random
 
 
 @pytest.fixture()
@@ -15,6 +16,7 @@ def driver():
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     yield chrome_driver
+    # chrome_driver.save_screenshot(f'{str(random.randint(100, 10000))}.png')
     chrome_driver.quit()
 
 
