@@ -18,8 +18,8 @@ def driver():
     chrome_driver = webdriver.Chrome(options=options)
     # chrome_driver.maximize_window()
     yield chrome_driver
-    filename = f'{str(random.randint(100, 10000))}.png'
-    chrome_driver.save_screenshot(filename)
+    # filename = f'{str(random.randint(100, 10000))}.png'
+    # chrome_driver.save_screenshot(filename)
     # allure.attach(chrome_driver.get_screenshot_as_png(), name="Screenshot", attachment_type="AttachmentType.png")
     # chrome_driver.quit()
 
