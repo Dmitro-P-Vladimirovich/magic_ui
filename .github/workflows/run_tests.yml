@@ -60,7 +60,7 @@ jobs:
       - name: Save allure report
         uses: actions/upload-artifact@v7
         with:
-          name: _site
+          name: allure-report
           path: _site
           retension-days: 1
 
@@ -72,7 +72,8 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-         name: _site
+         name: allure-report       
+         path: _site 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
