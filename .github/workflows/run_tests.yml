@@ -48,6 +48,7 @@ jobs:
         if: "github.event.inputs.deployment_target == 'extended'"
         run: pytest -m extended --alluredir=allure-results 
         continue-on-error: true
+      
       - name: Install Java
         uses: actions/setup-java@v4
         with:
